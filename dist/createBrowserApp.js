@@ -80,7 +80,9 @@ function createBrowserApp(App, { history: historyOption } = {}) {
     constructor(...args) {
       var _temp;
 
-      return _temp = super(...args), this.state = { nav: _core.NavigationActions.init() }, this._title = document.title, this._actionEventSubscribers = new Set(), this.dispatch = action => {
+      return _temp = super(...args), this.state = {
+        nav: App.router.getStateForAction(_core.NavigationActions.init())
+      }, this._title = document.title, this._actionEventSubscribers = new Set(), this.dispatch = action => {
         const lastState = this.state.nav;
         const newState = App.router.getStateForAction(action, lastState);
         const dispatchEvents = () => this._actionEventSubscribers.forEach(subscriber => subscriber({
