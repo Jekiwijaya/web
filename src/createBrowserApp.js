@@ -80,10 +80,11 @@ export default function createBrowserApp(App, { history: historyOption } = {}) {
   };
 
   class WebApp extends React.Component {
-    state = { nav: App.router.getStateForAction(initAction) };
+    state = { nav: NavigationActions.init() };
     _title = document.title;
     _actionEventSubscribers = new Set();
     componentDidMount() {
+      this.dispatch(initAction);
       setHistoryListener(this.dispatch);
       this.updateTitle();
       this._actionEventSubscribers.forEach(subscriber =>
