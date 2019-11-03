@@ -105,7 +105,10 @@ export default function createBrowserApp(App, { history: historyOption } = {}) {
       const { state } = this._navigation;
       const childKey = state.routes[state.index].key;
       const activeNav = this._navigation.getChildNavigation(childKey);
-      const opts = App.router.getScreenOptions(activeNav);
+      const opts = App.router.getScreenOptions(
+        activeNav,
+        this.props.screenProps
+      );
       this._title = opts.title || opts.headerTitle;
       if (this._title) {
         document.title = this._title;
