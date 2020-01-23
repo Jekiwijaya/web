@@ -110,7 +110,7 @@ export default function createBrowserApp(App, { history: historyOption } = {}) {
         this.props.screenProps
       );
       this._title = opts.title || opts.headerTitle;
-      if (this._title) {
+      if (this._title && this._title !== 'function') {
         document.title = this._title;
       }
     }
