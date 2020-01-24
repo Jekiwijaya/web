@@ -127,7 +127,7 @@ function createBrowserApp(App, { history: historyOption } = {}) {
       const activeNav = this._navigation.getChildNavigation(childKey);
       const opts = App.router.getScreenOptions(activeNav, this.props.screenProps);
       this._title = opts.title || opts.headerTitle;
-      if (this._title) {
+      if (this._title && this._title !== 'function') {
         document.title = this._title;
       }
     }
