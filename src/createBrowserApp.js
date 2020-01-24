@@ -109,8 +109,8 @@ export default function createBrowserApp(App, { history: historyOption } = {}) {
         activeNav,
         this.props.screenProps
       );
-      this._title = opts.title || opts.headerTitle;
-      if (this._title && this._title !== 'function') {
+      this._title = opts.title;
+      if (this._title && typeof this._title !== 'function') {
         document.title = this._title;
       }
     }
