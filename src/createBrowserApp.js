@@ -14,7 +14,7 @@ import {
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 /* eslint-disable import/no-commonjs */
-const queryString = require('query-string');
+const queryString = require('qs');
 
 const getPathAndParamsFromLocation = location => {
   const path = encodeURI(location.pathname.substr(1));

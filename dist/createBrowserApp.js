@@ -21,7 +21,7 @@ var _reactNativeSafeAreaContext = require('react-native-safe-area-context');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable import/no-commonjs */
-const queryString = require('query-string');
+const queryString = require('qs');
 
 const getPathAndParamsFromLocation = location => {
   const path = encodeURI(location.pathname.substr(1));
